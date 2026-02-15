@@ -13,7 +13,7 @@ public class CategoriaRequestDTO {
 	private String nombre;
 	@NotBlank
 	private String descripcion;
-	@NotBlank
-	private boolean estado;
+	@NotNull
+	private Boolean estado;
 
 }

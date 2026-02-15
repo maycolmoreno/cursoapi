@@ -1,36 +1,16 @@
 package com.uisrael.cursoapi.presentacion.dto.response;
 
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
 public class CategoriaResponseDTO {
 	
 	private int idCategoria;
+	@NotBlank(message = "El nombre de la categoría es obligatorio")
 	private String nombre;
 	private String descripcion;
-	private boolean estado;
+	private Boolean estado;
 	
-	public int getIdCategoria() {
-		return idCategoria;
-	}
-	public void setIdCategoria(int idCategoria) {
-		this.idCategoria = idCategoria;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-	public boolean isEstado() {
-		return estado;
-	}
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-
 	
 }

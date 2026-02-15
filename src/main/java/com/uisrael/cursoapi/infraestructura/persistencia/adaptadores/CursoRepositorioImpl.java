@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.uisrael.cursoapi.dominio.entidades.Curso;
 import com.uisrael.cursoapi.dominio.repositorios.ICursoRepositorio;
-import com.uisrael.cursoapi.infraestructura.persinstencia.jpa.CursoJpa;
+import com.uisrael.cursoapi.infraestructura.persistencia.jpa.CursoJpa;
 import com.uisrael.cursoapi.infraestructura.persistencia.mapeadores.ICursoJpaMapper;
 import com.uisrael.cursoapi.infraestructura.repositorios.ICursoJpaRepositorio;
 

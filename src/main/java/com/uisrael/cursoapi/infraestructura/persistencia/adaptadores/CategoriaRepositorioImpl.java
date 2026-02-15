@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.uisrael.cursoapi.dominio.entidades.Categoria;
 import com.uisrael.cursoapi.dominio.repositorios.ICategoriaRepositorio;
-import com.uisrael.cursoapi.infraestructura.persinstencia.jpa.CategoriaJpa;
+import com.uisrael.cursoapi.infraestructura.persistencia.jpa.CategoriaJpa;
 import com.uisrael.cursoapi.infraestructura.persistencia.mapeadores.ICategoriaJpaMapper;
 import com.uisrael.cursoapi.infraestructura.repositorios.ICategoriaJpaRepositorio;
 
@@ -27,7 +27,7 @@ public class CategoriaRepositorioImpl implements ICategoriaRepositorio {
 	}
 
 	@Override
-	public Optional<Categoria> buscarPorId(int id) {
+	public Optional<Categoria> buscarPorId(int  id) {
 		return jpaRepository.findById(id).map(entityMapper::toDomain);
 	}
 

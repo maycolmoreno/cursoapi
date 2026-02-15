@@ -1,4 +1,4 @@
-package com.uisrael.cursoapi.infraestructura.persinstencia.jpa;
+package com.uisrael.cursoapi.infraestructura.persistencia.jpa;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -31,7 +31,7 @@ public class CursoJpa implements Serializable {
 	private String descripcion;
 	private int duracion;
 	private Date fechaInicio;
-	private boolean estado;
+	private Boolean estado;
 	
 	@ManyToOne
 	@JoinColumn(name="fkCategoria")

@@ -3,7 +3,7 @@ package com.uisrael.cursoapi.infraestructura.persistencia.mapeadores;
 import org.mapstruct.Mapper;
 
 import com.uisrael.cursoapi.dominio.entidades.Categoria;
-import com.uisrael.cursoapi.infraestructura.persinstencia.jpa.CategoriaJpa;
+import com.uisrael.cursoapi.infraestructura.persistencia.jpa.CategoriaJpa;
 
 @Mapper(componentModel = "spring")
 public interface ICategoriaJpaMapper {

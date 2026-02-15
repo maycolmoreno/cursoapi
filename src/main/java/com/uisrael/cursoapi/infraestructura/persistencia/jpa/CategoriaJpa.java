@@ -1,13 +1,11 @@
-package com.uisrael.cursoapi.infraestructura.persinstencia.jpa;
+package com.uisrael.cursoapi.infraestructura.persistencia.jpa;
 
 import java.io.Serializable;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -26,10 +24,6 @@ public class CategoriaJpa implements Serializable {
 	private int idCategoria;
 	private String nombre;
 	private String descripcion;
-	private boolean estado;
-	
-	@OneToMany(mappedBy = "fkCategoria")
-	private List<CursoJpa> cursos;
-	
+	private Boolean estado;
 
 }

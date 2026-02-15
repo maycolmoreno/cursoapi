@@ -42,6 +42,15 @@ public class CategoriaControlador {
 	public List<CategoriaResponseDTO> listar() {
 		return categoriaUseCase.listar().stream().map(mapper::toResponseDto).toList();
 	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<CategoriaResponseDTO> obtenerPorId(@PathVariable int id) {
+		return categoriaUseCase.buscarPorId(id) // Optional<Categoria>
+			.map(mapper::toResponseDto) // Optional<CategoriaResponseDTO>
+			.map(ResponseEntity::ok) // Optional<ResponseEntity<CategoriaResponseDTO>>
+			.orElseGet(() -> ResponseEntity.notFound().build());
+	}
+	
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> eliminar(@PathVariable int id) {
@@ -49,4 +58,20 @@ public class CategoriaControlador {
 		return ResponseEntity.noContent().build();
 
 	}
+	/*
+	 * @GetMapping("/{id}") public ResponseEntity<CategoriaResponseDTO>
+	 * obtenerPorId(@PathVariable int id) { return categoriaUseCase.buscarPorId(id)
+	 * // Optional<Categoria> .map(mapper::toResponseDto) //
+	 * Optional<CategoriaResponseDTO> .map(ResponseEntity::ok) //
+	 * Optional<ResponseEntity<CategoriaResponseDTO>> .orElseGet(() ->
+	 * ResponseEntity.notFound().build()); }
+	 * 
+	 * @PutMapping("/{id}") public ResponseEntity<CategoriaResponseDTO>
+	 * actualizar(@PathVariable int id,
+	 * 
+	 * @Valid @RequestBody CategoriaRequestDTO request) { var actualizado =
+	 * categoriaUseCase.actualizar(id, mapper.toDomain(request)); return
+	 * ResponseEntity.ok(mapper.toResponseDto(actualizado)); }
+	 */
+
 }

@@ -8,7 +8,7 @@ import com.uisrael.cursoapi.dominio.entidades.Categoria;
 public interface ICategoriaRepositorio {
 	Categoria guardar(Categoria categoria);
 
-	Optional<Categoria> buscarPorId(int id);
+	Optional<Categoria> buscarPorId(int  id);
 
 	List<Categoria> listarTodos();
 

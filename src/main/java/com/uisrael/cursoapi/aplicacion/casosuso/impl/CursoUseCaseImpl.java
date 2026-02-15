@@ -37,4 +37,12 @@ public class CursoUseCaseImpl implements ICursoUseCase {
     public void eliminar(int id) {
         repositorio.eliminar(id);
     }
+    
+        @Override
+        public Curso actualizarFechaYCategoria(Integer id, java.sql.Date fechaInicio, com.uisrael.cursoapi.dominio.entidades.Categoria fkCategoria) {
+            Curso existente = obtenerPorId(id);
+            existente.setFechaInicio(fechaInicio);
+            existente.setFkCategoria(fkCategoria);
+            return repositorio.guardar(existente);
+        }
 }
